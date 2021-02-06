@@ -1,0 +1,5 @@
+This project we build to learning how to find out the meaning from data 
+- Note my life experience
+- Set up data pipeline
+- Deploy application to connect to data pipeline to mine insight from them
+- Learn how to protect data

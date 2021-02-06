@@ -7,7 +7,7 @@ services:
       - SPARK_MODE=master
     volumes: 
       - spark-volumes:/bitnami/spark
-      # - ./spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
+      - ./test:/opt/bitnami/spark/test
     ports: 
       - 7070:7070
       - 8080:8080
@@ -16,7 +16,7 @@ services:
     image: bitnami/spark:latest
     volumes:
       - spark-volumes:/bitnami/spark
-      # - ./spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
+      - ./test:/opt/bitnami/spark/test
     environment: 
       - SPARK_MODE=worker
       - SPARK_MASTER=spark://spark-master:7070

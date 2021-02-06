@@ -15,6 +15,17 @@ This project we build to learning how to find out the meaning from data
 - Email: lmquanduc.iser@gmail.com || duc.luong2@tiki.vn
 
 
+## Scala - Spark App with sbt
+### sbt
+[sbt](https://www.scala-sbt.org/) is a build tool which is created for Scala project and supported by [Lighbend](https://www.lightbend.com/)
+
+1. Install sbt with HomeBrew
+   ```
+   $ brew install sbt
+   ```
+2. Start Scala project: [scala-build-tool-sbt](https://docs.scala-lang.org/overviews/scala-book/scala-build-tool-sbt.html)
+
+
 ## Kafka
 ### Knowledge
 1. Set up kafka: [Medium](https://medium.com/better-programming/your-local-event-driven-environment-using-dockerised-kafka-cluster-6e84af09cd95)

@@ -9,6 +9,10 @@ This project we build to learning how to find out the meaning from data
 - Deploy application to connect to data pipeline to mine insight from them
 - Learn how to protect data
 
+### Contact
+- Telegram: @duclmq
+- LindkedIn: linkedin.com/in/max-luong
+- Email: lmquanduc.iser@gmail.com || duc.luong2@tiki.vn
 
 
 ## Kafka

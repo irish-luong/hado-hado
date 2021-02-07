@@ -1,4 +1,4 @@
-package services.producer
+package services
 
 import java.util.Properties
 import org.apache.kafka.clients.producer._

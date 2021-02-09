@@ -1,12 +1,11 @@
 package models
 
 import java.sql._
-import scala.util.Random
 import java.util.UUID
+import scala.util.Random
+import org.json4s.DefaultFormats
 import org.json4s.native.Serialization
 import org.json4s.native.Serialization.write
-import org.json4s.Formats._
-import org.json4s.DefaultFormats
 
 
 class NetworkSignal {
@@ -47,7 +46,5 @@ object RandomRun extends App {
     
     implicit val formats = DefaultFormats
     val random = new NetworkSignal()
-    
     println(write(random.genSignal))
-    // println(UUID.randomUUID().toString)
 }

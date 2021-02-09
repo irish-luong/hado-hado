@@ -1,2 +1,9 @@
+[0m[[0m[0minfo[0m] [0m[0m/Users/lap01178/Documents/max/hado-hado/spark-app/src/main/scala/models/NetworkData.scala:1:1: [0m
+[0m[[0m[0minfo[0m] [0m[0mFound names but no class, trait or object is defined in the compilation unit.[0m
+[0m[[0m[0minfo[0m] [0m[0mThe incremental compiler cannot record the dependency information in such case.[0m
+[0m[[0m[0minfo[0m] [0m[0mSome errors like unused import referring to a non-existent class might not be reported.[0m
+[0m[[0m[0minfo[0m] [0m[0m    [0m
+[0m[[0m[0minfo[0m] [0m[0mpackage models[0m
+[0m[[0m[0minfo[0m] [0m[0m^[0m
 [0m[[0m[33mwarn[0m] [0m[0mone deprecation (since 2.11.0); re-run with -deprecation for details[0m
 [0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

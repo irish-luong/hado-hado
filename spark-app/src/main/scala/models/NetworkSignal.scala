@@ -22,14 +22,6 @@ class NetworkSignal {
         longitude: Double
     )
 
-    val trainLines = List(
-        "R1", "R2", "R3", "R4", "RT1", "L3",
-        "S2", "L7", "RL2", "L5", "L1", "S1"
-    )
-    def randomLines: String = trainLines(Random.nextInt(trainLines.size))
-    def randomPassengerCount: Int = Random.nextInt(100)
-    def randomTrainNumber: Int = Random.nextInt(100)
-
     def randomDeviceType: String = {
         val ranNum = Random.nextInt(10)
         if (ranNum % 2 == 0) {

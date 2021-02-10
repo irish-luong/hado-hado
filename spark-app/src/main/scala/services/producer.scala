@@ -3,13 +3,14 @@ package services
 import java.util.Properties
 import org.apache.kafka.clients.producer._
 
+
 class Producer {
 
-    def run(): Unit = {
-        writeToKafka("to-do-list")
-    }
-
-    def writeToKafka(topic: String): Unit = {
+    def publish(
+        topic: String, 
+        key: String, 
+        value: Any
+        ): Unit = {
 
         // Set configuration for Kafka producer
         var props = new Properties()

@@ -8,9 +8,13 @@ import org.json4s.native.Serialization
 import org.json4s.native.Serialization.write
 
 
-class NetworkSignal {
+case class NetworkData(
+    time: Long,
+    deviceUUID: String,
+    networkSignals: List[NetworkSignal]
+) 
 
-    case class SignalGenerator(
+case class NetworkSignal(
         time: Long,
         networkType: String,
         rxSpeed: Double,
@@ -21,6 +25,8 @@ class NetworkSignal {
         longitude: Double
     )
 
+class SignalGenerator {
+
     def randomDeviceType: String = {
         val ranNum = Random.nextInt(10)
         if (ranNum % 2 == 0) {
@@ -29,7 +35,7 @@ class NetworkSignal {
         return "mobile"
     } 
 
-    def genSignal: SignalGenerator = SignalGenerator(
+    def genSignal: NetworkSignal = NetworkSignal(
         System.currentTimeMillis,
         randomDeviceType,
         Random.nextInt(1000),
@@ -45,6 +51,6 @@ class NetworkSignal {
 object RandomRun extends App {
     
     implicit val formats = DefaultFormats
-    val random = new NetworkSignal()
+    val random = new SignalGenerator()
     println(write(random.genSignal))
 }

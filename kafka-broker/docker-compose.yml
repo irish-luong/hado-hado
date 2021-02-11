@@ -43,7 +43,6 @@ services:
     hostname: kafka
     container_name: kafka
     command: ["tail", "-f", "/dev/null"]
-    network_mode: "host"
 
 networks:
   cluster-network:

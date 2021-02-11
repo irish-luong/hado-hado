@@ -1,8 +1,7 @@
 package Main
 
-import java.util.UUID
+import java.util.{UUID, Properties}
 import scala.util._
-import services.Producer
 import common.AppConstant
 import models.{NetworkData, NetworkSignal, SignalGenerator}
 
@@ -10,42 +9,66 @@ import models.{NetworkData, NetworkSignal, SignalGenerator}
 import org.json4s.DefaultFormats
 import org.json4s.native.Serialization
 import org.json4s.native.Serialization.write
+import org.apache.kafka.clients.producer._
 
 
-object Main extends App {
+object ProducerWorker extends App {
+
 
     override def main(args: Array[String]): Unit = {
-        // val kafkaProducer = new Producer()
-        // kafkaProducer.run()
-        // println("Hello, world xx")
+
+        var props = new Properties()
+        props.put("bootstrap.servers", "localhost:9092")
+        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
+        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
+
+        // Initate a Kafka producer instance
+        val producer = new KafkaProducer[String, String](props)
 
         implicit val formats = DefaultFormats
 
-        for ( i <- 0 to AppConstant.produce_run ) {
+        try {
+            for ( i <- 0 to AppConstant.produce_run ) {
+                
+                var uuid = UUID.randomUUID().toString()
+                var systemTime = System.currentTimeMillis
+
+                // Declare a empty list contains network signals
+                var signals: List[NetworkSignal] = List()
+
+                for ( j <- 0 to Random.nextInt(5) ) {
+                    var generator = new SignalGenerator()
+                    var networkSignal: NetworkSignal = generator.genSignal
+                    signals = networkSignal :: signals
+                }
             
-            var uuid = UUID.randomUUID().toString()
-            var systemTime = System.currentTimeMillis
+                var networkData = new NetworkData(
+                    systemTime,
+                    signals
+                )
+                
+                val message = write(networkData)
 
-            // Declare a empty list contains network signals
-            var signals: List[NetworkSignal] = List()
+                val record = new ProducerRecord[String, String](
+                    "hado.topic.network", 
+                    uuid, 
+                    message
+                    )
 
-            for ( j <- 0 to Random.nextInt(5) ) {
-                var generator = new SignalGenerator()
-                var networkSignal: NetworkSignal = generator.genSignal
+                producer.send(record)
+                
+                println("Publish message topic: " + uuid + " ->> value: " + message)
 
-                signals = networkSignal :: signals
+                Thread.sleep(30000)
             }
-            
-            var networkData = new NetworkData(
-                systemTime,
-                uuid,
-                signals
-            )
-
-            println(write(networkData))
+        } catch {
+             case _: Throwable => println("Got some other kind of Throwable exception")
+        } finally {
+            producer.close()
         }
-        
+
     }
 }
+
 
 

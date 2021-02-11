@@ -10,7 +10,6 @@ import org.json4s.native.Serialization.write
 
 case class NetworkData(
     time: Long,
-    deviceUUID: String,
     networkSignals: List[NetworkSignal]
 ) 
 

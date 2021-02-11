@@ -1,49 +1,38 @@
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
 [0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
-[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 13 products, 4 sources, 4 libraries[0m
-[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/MainApp.scala, ${BASE}/src/main/scala/models/Network.scala, ${BASE}/src/main/scala/common/AppContant.scala, ${BASE}/src/main/scala/services/Producer.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/MainApp.scala, ${BASE}/src/main/scala/models/Network.scala), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 12 products, 3 sources, 4 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/MainApp.scala, ${BASE}/src/main/scala/models/Network.scala, ${BASE}/src/main/scala/common/AppContant.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/MainApp.scala), unmodified = ...),Set(),Set(),API Changes: Set())[0m
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mInitial source changes:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	removed: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(${BASE}/src/main/scala/MainApp.scala, ${BASE}/src/main/scala/models/Network.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(${BASE}/src/main/scala/MainApp.scala)[0m
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(models.RandomRun, models.NetworkData, models.SignalGenerator, models.NetworkSignal, Main.Main)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(Main.ProducerWorker)[0m
 [0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(models.RandomRun, models.NetworkData, models.SignalGenerator, models.NetworkSignal, Main.Main)[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(${BASE}/src/main/scala/MainApp.scala, ${BASE}/src/main/scala/models/Network.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: models.RandomRun, models.NetworkData, models.SignalGenerator, models.NetworkSignal, Main.Main[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(Main.ProducerWorker)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(${BASE}/src/main/scala/MainApp.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Main.ProducerWorker[0m
 [0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 1[0m
-[0m[[0m[0minfo[0m] [0m[0mcompiling 2 Scala sources to /Users/lap01178/Documents/max/hado-hado/spark-app/target/scala-2.12/classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /Users/lap01178/Documents/max/hado-hado/spark-app/target/scala-2.12/classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.4.4:compile for Scala 2.12.13[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 2a8f24b0 for Scala compiler version 2.12.13[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 431bd057 for Scala compiler version 2.12.13[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.13/scala-library-2.12.13.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/lap01178/Documents/max/hado-hado/spark-app/target/scala-2.12/classes:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/kafka/kafka_2.12/2.1.0/kafka_2.12-2.1.0.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-native_2.12/3.7.0-M8/json4s-native_2.12-3.7.0-M8.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/kafka/kafka-clients/2.1.0/kafka-clients-2.1.0.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.9.7/jackson-databind-2.9.7.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/yammer/metrics/metrics-core/2.2.0/metrics-core-2.2.0.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.13/scala-reflect-2.12.13.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/scala-logging/scala-logging_2.12/3.9.0/scala-logging_2.12-3.9.0.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/101tec/zkclient/0.10/zkclient-0.10.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/zookeeper/zookeeper/3.4.13/zookeeper-3.4.13.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-core_2.12/3.7.0-M8/json4s-core_2.12-3.7.0-M8.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/github/luben/zstd-jni/1.3.5-4/zstd-jni-1.3.5-4.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/lz4/lz4-java/1.5.0/lz4-java-1.5.0.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.7.2/snappy-java-1.1.7.2.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.7/jackson-core-2.9.7.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-ast_2.12/3.7.0-M8/json4s-ast_2.12-3.7.0-M8.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/json4s/json4s-scalap_2.12/3.7.0-M8/json4s-scalap_2.12-3.7.0-M8.jar:/Users/lap01178/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from models.NetworkData...[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: models.NetworkData[0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(models.NetworkData)[0m
-[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of Main.Main: Set(UsedName(networkSignal,[Default]), UsedName(models;NetworkData;init;,[Default]), UsedName(NetworkData,[Default]))[0m
-[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(models.NetworkData,ModifiedNames(changes = UsedName(networkSignal,[Default]), UsedName(models;NetworkData;init;,[Default]), UsedName(curried,[Default]), UsedName(tupled,[Default]), UsedName(NetworkData,[Default]), UsedName(networkSignals,[Default]), UsedName(apply,[Default]), UsedName(copy,[Default]), UsedName(unapply,[Default]), UsedName(copy$default$3,[Default]))) invalidates 2 classes due to The models.NetworkData has the following regular definitions changed:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	UsedName(networkSignal,[Default]), UsedName(models;NetworkData;init;,[Default]), UsedName(curried,[Default]), UsedName(tupled,[Default]), UsedName(NetworkData,[Default]), UsedName(networkSignals,[Default]), UsedName(apply,[Default]), UsedName(copy,[Default]), UsedName(unapply,[Default]), UsedName(copy$default$3,[Default]).[0m
-[0m[[0m[0mdebug[0m] [0m[0m  > by transitive inheritance: Set(models.NetworkData)[0m
-[0m[[0m[0mdebug[0m] [0m[0m  > [0m
-[0m[[0m[0mdebug[0m] [0m[0m  > by member reference: Set(Main.Main)[0m
-[0m[[0m[0mdebug[0m] [0m[0m        [0m
 [0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Main.Main[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Main.Main[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: [0m
 [0m[[0m[0mdebug[0m] [0m[0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
 [0m[[0m[0mdebug[0m] [0m[0mFinal step, transitive dependencies:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Set(Main.Main)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mNo classes were invalidated.[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 3.904120278 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 3.263988743 s[0m
 [0m[[0m[0mdebug[0m] [0m[0mdone compiling[0m

@@ -1,13 +1,11 @@
-package Main
-
 import java.util.{UUID, Properties}
 import scala.util._
 import common.AppConstant
 import models.{NetworkData, NetworkSignal, SignalGenerator}
+import util.ConfigUtil
 
 
 import org.json4s.DefaultFormats
-import org.json4s.native.Serialization
 import org.json4s.native.Serialization.write
 import org.apache.kafka.clients.producer._
 
@@ -30,7 +28,7 @@ object ProducerWorker extends App {
         try {
             for ( i <- 0 to AppConstant.produce_run ) {
                 
-                var uuid = UUID.randomUUID().toString()
+                var uuid = UUID.randomUUID().toString
                 var systemTime = System.currentTimeMillis
 
                 // Declare a empty list contains network signals
@@ -42,7 +40,7 @@ object ProducerWorker extends App {
                     signals = networkSignal :: signals
                 }
             
-                var networkData = new NetworkData(
+                var networkData = NetworkData(
                     systemTime,
                     signals
                 )
@@ -71,4 +69,11 @@ object ProducerWorker extends App {
 }
 
 
+object Console extends App {
 
+    val config = ConfigUtil.getConfig(
+        scala.util.Properties.envOrElse("mode", "uat")
+    )
+    println(config.getString("kafka.bootstrap.servers"))
+
+}

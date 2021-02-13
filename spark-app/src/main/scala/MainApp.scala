@@ -23,8 +23,6 @@ object ProducerWorker extends App {
         // Initate a Kafka producer instance
         val producer = new KafkaProducer[String, String](props)
 
-        implicit val formats = DefaultFormats
-
         try {
             for ( i <- 0 to AppConstant.produce_run ) {
                 
@@ -45,7 +43,7 @@ object ProducerWorker extends App {
                     signals
                 )
                 
-                val message = write(networkData)
+                val message = write(networkData)(DefaultFormats)
 
                 val record = new ProducerRecord[String, String](
                     "hado.topic.network", 

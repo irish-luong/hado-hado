@@ -1,5 +1,8 @@
 # Scala Knowledge
 
+## Ebook:
+- [Learning Scala Language](https://riptutorial.com/Download/scala-language.pdf)
+- [Spark Action](https://drive.google.com/file/d/18CWuR4DF3hqcy6Adj5WRlE7XuMxfwN9R/view?usp=sharing)
 ## Configurarion
 - Configuration is most essential factor in any application, that makes system customisable.
 - There are 3 ways to load configuration to application:

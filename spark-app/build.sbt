@@ -18,3 +18,8 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.1",
   "com.novocode" % "junit-interface" % "0.11"
 )
+
+assemblyMergeStrategy in assembly := {
+  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case x => MergeStrategy.first
+}

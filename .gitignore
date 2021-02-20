@@ -1,3 +1,5 @@
 *.class
 *.log
 **/spark-app/project/**
+*.bsp
+*.idea

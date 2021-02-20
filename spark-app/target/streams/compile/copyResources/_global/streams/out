@@ -1,2 +1,4 @@
 [0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/lap01178/Documents/max/hado-hado/spark-app/src/main/resources/dev.conf,/Users/lap01178/Documents/max/hado-hado/spark-app/target/scala-2.12/classes/dev.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/lap01178/Documents/max/hado-hado/spark-app/src/main/resources/uat.conf,/Users/lap01178/Documents/max/hado-hado/spark-app/target/scala-2.12/classes/uat.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/lap01178/Documents/max/hado-hado/spark-app/src/main/resources/production.conf,/Users/lap01178/Documents/max/hado-hado/spark-app/target/scala-2.12/classes/production.conf)[0m

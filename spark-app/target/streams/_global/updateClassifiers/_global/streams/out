@@ -1,0 +1,4 @@
+[debug] not up to date. inChanged = true, force = false
+[debug] Updating ProjectRef(uri("file:/Users/lap01178/Documents/max/hado-hado/spark-app/"), "spark-app")...
+[debug] Done updating ProjectRef(uri("file:/Users/lap01178/Documents/max/hado-hado/spark-app/"), "spark-app")
+[warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.

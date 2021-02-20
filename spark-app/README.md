@@ -3,6 +3,59 @@
 ## Ebook:
 - [Learning Scala Language](https://riptutorial.com/Download/scala-language.pdf)
 - [Spark Action](https://drive.google.com/file/d/18CWuR4DF3hqcy6Adj5WRlE7XuMxfwN9R/view?usp=sharing)
+
+## Naming Convention
+Scala use "cammel case" naming. 
+That is, each word is capitialized (upper camel case), except possibly the first word (lower camel case).
+- Method, value and variable names should be in lower camel case.
+- Constant names should be in upper camel case.
+
+Examples:
+- Standard cases:
+  ```
+  UpperCamelCase
+  lowerCamelCase
+  ```
+- Acronyms should be treated as normal word
+  ```
+  xHtml instead of xHTML
+  maxId instead of maxID
+  ```
+
+## Working With Data in Immutable Style
+### 1. var AND val
+- var (variable): referrence as reassignable as simple variable declaration in Java
+- val (value): referrence as unreassignable, it means once it has been initialized. Like a `final` variable in Java
+### 2. Immutable and Mutable collections
+ - Mutable collection:
+  ```
+  scala> val mut = scala.collection.mutable.Map.empty[String, Int]
+  mut: scala.collection.mutable.Map[String,Int] = Map()
+
+  scala> mut += ("123" -> 123)
+  res0: mut.type = Map(123 -> 123)
+
+  scala> println(mut)
+  Map(123 -> 123)
+  ```
+
+  - Immutable collections:
+  ```
+  scala> val immut = scala.collection.immutable.Map.empty[String, Int]
+  immut: scala.collection.immutable.Map[String,Int] = Map()
+
+  scala> immut += ("123" -> 123)
+  <console>:13: error: value += is not a member of scala.collection.immutable.Map[String,Int]
+    Expression does not convert to assignment because receiver is not assignable.
+  immut += ("123" -> 123)
+        ^
+
+  scala> immut + ("123" -> 123)
+  res3: scala.collection.immutable.Map[String,Int] = Map(123 -> 123)
+
+  scala> println(immut)
+  Map()
+  ```
 ## Configurarion
 - Configuration is most essential factor in any application, that makes system customisable.
 - There are 3 ways to load configuration to application:

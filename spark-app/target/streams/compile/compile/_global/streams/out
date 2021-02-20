@@ -1,2 +1,5 @@
-[0m[[0m[33mwarn[0m] [0m[0mone deprecation (since 2.11.0); re-run with -deprecation for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/lap01178/Documents/max/hado-hado/spark-app/src/main/scala/spark_jobs/NetworkStreamingELT.scala:27:27: not enough arguments for method apply: (name: String, dataType: org.apache.spark.sql.types.DataType, nullable: Boolean, metadata: org.apache.spark.sql.types.Metadata)org.apache.spark.sql.types.StructField in object StructField.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter dataType.[0m
+[0m[[0m[31merror[0m] [0m[0m  val schema = StructField([0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

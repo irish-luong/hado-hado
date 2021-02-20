@@ -9,7 +9,7 @@ services:
       - spark-volumes:/bitnami/spark
       - ./test:/opt/bitnami/spark/test
     ports: 
-      - 7070:7070
+      - 7077:7077
       - 8080:8080
 
   spark-worker-1:
@@ -19,7 +19,7 @@ services:
       - ./test:/opt/bitnami/spark/test
     environment: 
       - SPARK_MODE=worker
-      - SPARK_MASTER=spark://spark-master:7070
+      - SPARK_MASTER=spark://spark-master:7077
 
 
 volumes:

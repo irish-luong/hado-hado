@@ -1,5 +1,4 @@
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types.{StructField, _}
 import util.ConfigUtil
 
@@ -14,7 +13,8 @@ object NetworkStreamingETL extends App {
   val config = ConfigUtil.getConfig(env)
 
   // Start a Spark Session to a running spark cluster
-  val spark: SparkSession = SparkSession.builder
+  val spark: SparkSession = SparkSession
+    .builder()
     .master(config.getString("spark.master"))
     .appName(getClass.getSimpleName)
     .getOrCreate()
@@ -27,6 +27,7 @@ object NetworkStreamingETL extends App {
   println("Master :" + spark.sparkContext.master)
 
   // Import all implicit variables of Spark
+  import org.apache.spark.sql.functions._
   import spark.implicits._
 
   val schema = StructType(
@@ -45,17 +46,19 @@ object NetworkStreamingETL extends App {
     )
   )
 
+  print("PLAINTEXT://broker:29092")
+
   // Create streaming from Kafka to Dataframe
   val df = spark
     .readStream
     .format("kafka")
-    .option("kafka.bootstrap.servers", config.getString("spark.master"))
-    .option("subscribe", config.getString("spark.master"))
+    .option("kafka.bootstrap.servers", "PLAINTEXT://broker:29092")
+    .option("subscribe", "hado.topic.network")
     .load()
     .selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
     .select(from_json($"value", schema).alias("data"))
     .createOrReplaceTempView("network_signals")
-
+//
   val sql =
     """
       |SELECT

@@ -24,7 +24,7 @@ services:
     depends_on:
       - spark-master
     ports:
-      - "8081:8081"
+      - "8082:8081"
     environment:
       - "SPARK_MASTER=spark://spark-master:7077"
   spark-app:
@@ -42,6 +42,10 @@ services:
       - "SPARK_MASTER_PORT=7077"
       - "SPARK_APPLICATION_MAIN_CLASS=NetworkStreamingETL"
       - "ENABLE_INIT_DAEMON=false"
+    volumes:
+      - ./src:/app/src
+    entrypoint: ""
+    command: ["tail", "-f", "/dev/null"]
   zookeeper:
     image: confluentinc/cp-zookeeper:5.4.0
     hostname: zookeeper
@@ -81,13 +85,4 @@ services:
     container_name: kafka
     depends_on:
       - broker
-    network_mode: host
-    command: [ "kafka-topics",
-                 "--create" ,
-                 "--bootstrap-server", "localhost:9092",
-                 "--replication-factor", "1", "--partitions", "2",
-                 "--topic to-do-list",
-               "&&",
-               "tail",
-                 "-f", "/dev/null"
-    ]
+    command: ["tail", "-f", "/dev/null"]

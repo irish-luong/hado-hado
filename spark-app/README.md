@@ -139,3 +139,133 @@ Scala is a statically typed programing language that bridge the gap between obje
   res10: Float = 24.0
   ```
 - Scala compiler will not only finds values declared with `val` but also finds implicit functions call return values with type fixed with  type of implicit parameters
+
+## Scala Extractor
+### 1. Tuple extractor
+Particular case: 
+```
+scala> val (a, b) = (1, 2)
+a: Int = 1
+b: Int = 2
+
+scala> a
+res0: Int = 1
+
+scala> b
+res1: Int = 2
+```
+To ignore extracted value:
+```
+scala> val (_, a) = (1, "a")
+a: String = a
+```
+To unpack an extractor
+```
+scala> val student_1 = ("Peter", 10)
+student_1: (String, Int) = (Peter,10)
+
+scala> student_1._1
+res0: String = Peter
+
+scala> student_1._2
+res1: Int = 10
+
+scala> student_1._3
+<console>:13: error: value _3 is not a member of (String, Int)
+student_1._3
+```
+-------
+**Note that:**
+- Tuple have maximum length of 22, and this ._1 and _.22 will work (assuming tuple has at least that size).
+- Tuple extractor may be used to provide symbolic arguments for literal functions.
+-------
+Providing symbolic arguments
+```
+scala> val persons = List("A." -> "Lovelace", "G." -> "Hopper")
+persons: List[(String, String)] = List((A.,Lovelace), (G.,Hopper))
+
+scala> val names = List("Lovelace, A.", "Hopper, G.")
+names: List[String] = List(Lovelace, A., Hopper, G.)
+
+scala> assert {
+   names == (persons.map({name => s"${name._2}, ${name._1}"}))
+ }
+     |      | 
+
+scala> assert {
+   names == (persons.map({
+     case (given, surname) => s"${surname}, ${given}"
+   }))
+ }
+     |      |      |      | 
+```
+### 2. Case class extractor
+Case classes are classes with a lot of standard boilerplace code automatically included, they are good for modeling 
+immutable data. 
+```
+scala> case class Person(name: String, age: Int)
+defined class Person
+
+scala> val p = Person("Peter", 10)
+p: Person = Person(Peter,10)
+
+scala> val Person(c, d) = p
+c: String = Peter
+d: Int = 10
+```
+At this juncture, both n and a are vals in the program and can be accessed as such: they are said
+to have been 'extracted' from p.
+
+```
+scala> val p2 = Person("Tom", 173)
+ 
+p2: Person = Person(Tom,173)
+
+scala> val List(Person(n1, a1), Person(_, a2)) = List(p, p2)
+n1: String = Peter
+a1: Int = 10
+a2: Int = 173
+```
+----
+**Note that**: 
+  - Extraction can happen at 'deep' level: properties of nested objects can be extracted. 
+  - Not all elements need to be extracted. The wildcard `_` character indicates that that particular
+    value can be anything, and is ignored. No val is created
+----
+
+### 3. Custom Extractors (Extractor Object)
+```
+scala> object CustomerID {
+   def apply(name: String) = s"${name}--${scala.util.Random.nextLong}"
+   def unapply(customerId: String): Option[String] = {
+     val stringArray: Array[String] = customerId.split("--")
+     if (stringArray.tail.nonEmpty) Some(stringArray.head) else None
+   } 
+ }
+     |      |      |      |      |      | defined object CustomerID
+
+
+scala> val customer1Id = CustomerID("Max.Luong")
+customer1Id: String = Max.Luong---6872945114686439161
+
+scala> customer1Id match {
+   case CustomerID(name) => println(name)
+   case _ => println("Could not extract customer ID")
+ }
+     |      |      | Max.Luong
+
+scala> object OrderID {
+   def apply(order: String) = s"${order}__${scala.util.Random.nextLong}"
+ }
+     |      | defined object OrderID
+
+scala> val order1Id = OrderID("Car")
+order1Id: String = Car__-6309088696101765621
+
+scala> order1Id match {
+   case CustomerID(name) => println(name)
+   case _ => println("Could not extract customer ID")
+ }
+     |      |      | Could not extract customer ID
+
+```

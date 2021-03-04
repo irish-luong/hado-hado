@@ -68,7 +68,7 @@ object NetworkStreamingETL extends App {
       | AVG(x.signal.txSpeed) AS avgTxSpeed,
       | MIN(x.signal.rxSpeed) AS minRxSpeed,
       | MIN(x.signal.txSpeed) AS minTxSpeed,
-      | MAX(x.signal.rxSpeed) AS maxRxSpeed
+      | MAX(x.signal.rxSpeed) AS maxRxSpeed,
       | MAX(x.signal.txSpeed) AS maxTxSpeed
       |FROM (
       | SELECT EXPLODE(data.networkSignal) as signals FROM network_signals

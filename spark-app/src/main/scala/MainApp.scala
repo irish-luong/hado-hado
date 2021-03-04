@@ -35,27 +35,42 @@ object ProducerWorker extends App {
                 for ( j <- 0 to Random.nextInt(5) ) {
                     var generator = new SignalGenerator()
                     var networkSignal: NetworkSignal = generator.genSignal
-                    signals = networkSignal :: signals
-                }
-            
-                var networkData = NetworkData(
-                    systemTime,
-                    signals
-                )
-                
-                val message = write(networkData)(DefaultFormats)
 
-                val record = new ProducerRecord[String, String](
-                    "hado.topic.network", 
-                    uuid, 
-                    message
+                    val message_signals = write(networkSignal)(DefaultFormats)
+
+                    val record = new ProducerRecord[String, String](
+                        "hado.topic.network",
+                        uuid,
+                        message_signals
                     )
 
-                producer.send(record)
-                
-                println("Publish message topic: " + uuid + " ->> value: " + message)
+                    producer.send(record)
 
-                Thread.sleep(30000)
+                    println("Publish message topic: network" + " ->> value: " + message_signals)
+
+                    signals = networkSignal :: signals
+
+                    Thread.sleep(30000)
+                }
+//
+//                var networkData = NetworkData(
+//                    systemTime,
+//                    signals
+//                )
+//
+//                val message = write(networkData)(DefaultFormats)
+//
+//                val record = new ProducerRecord[String, String](
+//                    "hado.topic.network",
+//                    uuid,
+//                    message
+//                    )
+//
+//                producer.send(record)
+//
+//                println("Publish message topic: " + uuid + " ->> value: " + message)
+
+
             }
         } catch {
              case _: Throwable => println("Got some other kind of Throwable exception")

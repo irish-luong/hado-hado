@@ -5,8 +5,8 @@
 - [Spark Action](https://drive.google.com/file/d/18CWuR4DF3hqcy6Adj5WRlE7XuMxfwN9R/view?usp=sharing)
 
 ## Naming Convention
-Scala use "cammel case" naming. 
-That is, each word is capitialized (upper camel case), except possibly the first word (lower camel case).
+Scala use "camel case" naming. 
+That is, each word is capitalized (upper camel case), except possibly the first word (lower camel case).
 - Method, value and variable names should be in lower camel case.
 - Constant names should be in upper camel case.
 
@@ -24,8 +24,8 @@ Examples:
 
 ## Working With Data in Immutable Style
 ### 1. var AND val
-- var (variable): referrence as reassignable as simple variable declaration in Java
-- val (value): referrence as unreassignable, it means once it has been initialized. Like a `final` variable in Java
+- var (variable): reference as re-assignable as simple variable declaration in Java
+- val (value): reference as un-re-assignable, it means once it has been initialized. Like a `final` variable in Java
 ### 2. Immutable and Mutable collections
  - Mutable collection:
   ```

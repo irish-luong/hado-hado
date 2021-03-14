@@ -51,7 +51,8 @@ We have 26 factorial case when apply substitution cipher
 1. Definition: 
 The Affine cipher is a type of monoalphabetic substitution cipher, wherein each letter in an alphabet is mapped to its numeric equivalent, encrypted using a simple mathematical function, and converted back to a letter.
 
-2. Formula:
+
+1. Formula:
 - Encryption
 
 ```
@@ -67,6 +68,8 @@ The Affine cipher is a type of monoalphabetic substitution cipher, wherein each 
                         1 = a a^-1 mod m .
 ```
 
+3. Modular Multiplicative Inverse
+4. 
 ** Referrence: https://www.geeksforgeeks.org/implementation-affine-cipher/
 
 #### Vigenere cipher

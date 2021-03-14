@@ -67,6 +67,18 @@ Similar lists have been developed by the European Network and Information Securi
 ## TRANSPORT-LEVEL SECURITY
 
 ### Web Security Consideration
+Web traffic security threats
+|             | Threats      | Consequences| Countermeasure |
+| ----------- | -----------  | ----------- |----------      |
+| Integrity   | list: 1. ecwvw  | ----------- |----------      |
+| ----------- | -----------  | ----------- |----------      |
+| ----------- | -----------  | ----------- |----------      |
+| ----------- | -----------  | ----------- |----------      |
+| ----------- | -----------  | ----------- |----------      |
+| ----------- | -----------  | ----------- |----------      |
+
+Wb traffic security approaches
+
 ### Transportation Security
 ### HTTPS
 ### Secure Shell (SSH)

@@ -1,7 +1,7 @@
 # hado-hado
 
 ## What about me
-I love the meaning of `Man search for meaning`. A sensitive boy
+I love the meaning of `Man search for meaning`. 
 
 This project we build to learning how to find out the meaning from data 
 - Note my life experience
